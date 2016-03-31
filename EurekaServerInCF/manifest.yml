@@ -4,10 +4,11 @@ applications:
   memory: 512M
   path: target/eureka-server-test-0.0.1-SNAPSHOT.jar
   env:
-    JAVA_OPTS: '-Dspring.profiles.active=peer1'
+    EUREKA_PEER: cna-eureka-server2.cfapps.io
+
 - name: cna-eureka-server2
   memory: 512M
   path: target/eureka-server-test-0.0.1-SNAPSHOT.jar
   env:
-    JAVA_OPTS: '-Dspring.profiles.active=peer2'
+    EUREKA_PEER: cna-eureka-server1.cfapps.io
 
