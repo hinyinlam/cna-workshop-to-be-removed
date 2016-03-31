@@ -1,0 +1,30 @@
+---
+spring:
+  profiles: peer1
+  application:
+    name: cna-eureka-server1
+eureka:
+  instance:
+    hostname: ${spring.application.name}.cfapps.io
+    non-secure-port: 80
+    secure-port: 443
+    secure-port-enabled: true
+  client:
+    registerWithEureka: true
+    service-url:
+      defaultZone: http://cna-eureka-server2.cfapps.io/eureka/
+
+---
+spring:
+  profiles: peer2
+  application:
+    name: cna-eureka-server2
+eureka:
+  instance:
+      hostname: ${spring.application.name}.cfapps.io
+      non-secure-port: 80
+      secure-port: 443
+  client:
+    registerWithEureka: true
+    service-url:
+      defaultZone: http://cna-eureka-server1.cfapps.io/eureka/
