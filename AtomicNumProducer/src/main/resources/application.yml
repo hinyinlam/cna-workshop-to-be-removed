@@ -1,0 +1,18 @@
+---
+spring:
+  profiles: cloud
+  application:
+    name: ${vcap.application.application_name}
+
+eureka:
+  instance:
+    hostname: ${vcap.application.application_uris[0]}
+    non-secure-port: 80
+    secure-port: 443
+    secure-port-enabled: true
+    metadataMap:
+          instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+  client:
+    registerWithEureka: true
+    service-url:
+      defaultZone: http://${EUREKA_PEER}/eureka

@@ -1,0 +1,7 @@
+---
+applications:
+  - name: cna-atomic-num-consumer-${random-word}
+    memory: 512M
+    path: target/atomicnumconsumer-0.0.1-SNAPSHOT.jar
+    env:
+          EUREKA_PEER: "cna-eureka-server1.cfapps.io"
