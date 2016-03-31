@@ -1,0 +1,10 @@
+spring:
+    application:
+        name: springconfigserver
+    profiles:
+        active: configserver
+    cloud:
+        config:
+            server:
+                git:
+                    uri: https://github.com/hinyinlam/springcloudconfig-server-bootstrap

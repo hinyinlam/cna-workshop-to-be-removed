@@ -1,0 +1,8 @@
+---
+applications:
+  - name: spring-cloud-config-server
+    random-route: true
+    path: target/cloudconfigserver-1.0-SNAPSHOT.jar
+    memory: 512M
+    env:
+      JAVA_OPTS: "-Dspring.cloud.config.server.git.url=https://github.com/spring-cloud-samples/config-repo"
