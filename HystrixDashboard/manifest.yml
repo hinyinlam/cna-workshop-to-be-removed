@@ -1,0 +1,5 @@
+---
+applications:
+  - name: cna-hystrix-dashboard-{$random-word}
+    path: target/hystrixdashboard-0.0.1-SNAPSHOT.jar
+    memory: 512M
