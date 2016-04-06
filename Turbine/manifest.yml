@@ -1,0 +1,7 @@
+---
+applications:
+  - name: cna-turbine-${random-word}
+    memory: 512M
+    path: target/turbine-0.0.1-SNAPSHOT.war
+    env:
+          EUREKA_PEER: "cna-eureka-server1.cfapps.io"
