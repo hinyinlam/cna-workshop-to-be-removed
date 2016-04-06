@@ -1,0 +1,9 @@
+---
+applications:
+  - name: cna-turbine-amqp-${random-word}
+    memory: 512M
+    path: target/turbineamqp-0.0.1-SNAPSHOT.war
+    services:
+      - turbine-metrics #change this service name to your service instance
+    env:
+          EUREKA_PEER: "cna-eureka-server1.cfapps.io"

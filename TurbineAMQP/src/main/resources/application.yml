@@ -1,0 +1,44 @@
+---
+spring:
+  profiles: local
+  application:
+    name: turbine
+
+server:
+  port: 8092
+
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://cna-eureka-server1.cfapps.io/eureka
+
+turbine:
+  aggregator:
+    clusterConfig: CNA-ATOMIC-NUM-CONSUMER
+  appConfig: cna-atomic-num-consumer
+
+---
+spring:
+  profiles: cloud
+  application:
+    name: ${vcap.application.application_name}
+
+eureka:
+  instance:
+    hostname: ${vcap.application.application_uris[0]}
+    non-secure-port: 80
+    secure-port: 443
+    secure-port-enabled: true
+    metadataMap:
+          instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+  client:
+    registerWithEureka: true
+    service-url:
+      defaultZone: http://${EUREKA_PEER}/eureka
+
+turbine:
+  aggregator:
+    clusterConfig: CNA-ATOMIC-NUM-CONSUMER2
+  appConfig: cna-atomic-num-consumer2
+
