@@ -1,8 +1,8 @@
-server:
-    port: 80
 spring:
+    application:
+        name: CNASpringConfigServer
     cloud:
         config:
             server:
                 git:
-                    uri: https://github.com/hinyinlam/springcloudconfig-demo
+                    uri: https://github.com/hinyinlam-pivotal/cna-configrepo

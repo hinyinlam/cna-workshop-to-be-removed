@@ -1,9 +1,8 @@
-server:
-    port: 80
-#if you don't use specific in manifest.yml as env variable, then you should specific below:
-#spring:
-#    cloud:
-#        config:
-#            server:
-#                git:
-#                    uri: https://github.com/spring-cloud-samples/config-repo
+spring:
+    application:
+        name: CNASpringConfigServer
+    cloud:
+        config:
+            server:
+                git:
+                    uri: https://github.com/hinyinlam-pivotal/cna-configrepo

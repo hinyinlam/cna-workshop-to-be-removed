@@ -1,0 +1,9 @@
+spring:
+    application:
+        name: cloudconfigclientsample
+
+eureka: #This setting will be override by settings came from Spring Cloud Config Server
+    client:
+        registerWithEureka: false
+        service-url:
+            defaultZone: http://this-is-a-local-settings

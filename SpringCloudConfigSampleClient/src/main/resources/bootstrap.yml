@@ -1,0 +1,4 @@
+spring:
+  cloud:
+    config:
+      uri:  http://cna-spring-cloud-config-server.cfapps.io

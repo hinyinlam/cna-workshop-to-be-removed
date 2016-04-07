@@ -37,8 +37,8 @@ eureka:
     service-url:
       defaultZone: http://${EUREKA_PEER}/eureka
 
-turbine:
-  aggregator:
-    clusterConfig: CNA-ATOMIC-NUM-CONSUMER2
-  appConfig: cna-atomic-num-consumer2
+#turbine:
+#  aggregator:
+#    clusterConfig: CNA-ATOMIC-NUM-CONSUMER2
+#  appConfig: cna-atomic-num-consumer2
 

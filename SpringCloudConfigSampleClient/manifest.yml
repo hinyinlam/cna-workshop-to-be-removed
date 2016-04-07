@@ -1,0 +1,7 @@
+---
+applications:
+  - name: cna-spring-cloud-config-sample-client-{$random-word}
+    path: target/springcloudconfigsampleclient-0.0.1-SNAPSHOT.jar
+    memory: 512M
+    services:
+        - cloud-config-refresh-bus
