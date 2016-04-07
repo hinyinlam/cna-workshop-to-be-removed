@@ -2,6 +2,9 @@
 spring:
     profiles: cloud
 
-testparameter: testvalue
-
+eureka:
+    client:
+        registerWithEureka: true
+        service-url:
+            defaultZone: http://cna-eureka-server1.cfapps.io/eureka
 
